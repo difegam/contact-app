@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Contact List{% endblock %}
-
+{% block title %}
+    Contact List
+{% endblock title %}
 {% block content %}
     <h2>Contact List</h2>
-
     <form action="/contacts" method="get" class="search-form">
         <label for="search">Search:</label>
-        <input id = "search" type="search" name="q" placeholder="Search contacts..." value="{{ request.GET.q  }}">
+        <input id="search"
+               type="search"
+               name="q"
+               placeholder="Search contacts..."
+               value="{{ request.GET.q }}">
         <button type="submit">Search</button>
     </form>
     <a href="{% url 'contacts:contact-create' %}">Create New Contact</a>
-
     <table>
         <thead>
             <tr>
@@ -46,5 +49,4 @@
             {% endfor %}
         </tbody>
     </table>
-
 {% endblock content %}

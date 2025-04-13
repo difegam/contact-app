@@ -1,15 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Create Contact{% endblock %}
-
+{% block title %}
+    Create Contact
+{% endblock title %}
 {% block content %}
     <h2>Create Contact</h2>
-
     <form method="post" action="{% url 'contacts:contact-create' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Create</button>
     </form>
-
     <a href="{% url 'contacts:contact-list' %}">Back to Contact List</a>
 {% endblock content %}
