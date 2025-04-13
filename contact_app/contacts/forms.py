@@ -1,3 +1,5 @@
+import typing
+
 from django import forms
 
 from .models import Contact
@@ -16,14 +18,14 @@ class ContactForm(forms.ModelForm):
             "address",
             "is_favorite",
         )
-        widgets = {
+        widgets: typing.ClassVar = {
             "first_name": forms.TextInput(attrs={"placeholder": "First Name"}),
             "last_name": forms.TextInput(attrs={"placeholder": "Last Name"}),
             "email": forms.EmailInput(attrs={"placeholder": "Email"}),
             "phone": forms.TextInput(attrs={"placeholder": "Phone"}),
             "address": forms.Textarea(attrs={"placeholder": "Address"}),
         }
-        labels = {
+        labels: typing.ClassVar = {
             "first_name": "First Name",
             "last_name": "Last Name",
             "email": "Email",
@@ -31,7 +33,7 @@ class ContactForm(forms.ModelForm):
             "address": "Address",
             "is_favorite": "Favorite",
         }
-        help_texts = {
+        help_texts: typing.ClassVar = {
             "first_name": "Enter the first name of the contact.",
             "last_name": "Enter the last name of the contact.",
             "email": "Enter a valid email address.",
