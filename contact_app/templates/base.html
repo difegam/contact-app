@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            {% block title %}Contact App{% endblock %}
+            {% block title %}
+                Contact App
+            {% endblock title %}
         </title>
         <!-- CSS -->
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -32,7 +34,8 @@
             </nav>
         </header>
         <main id="main-content" role="main">
-            {% block content %}{% endblock %}
+            {% block content %}
+            {% endblock content %}
         </main>
         <footer role="contentinfo">
             {% block footer %}
